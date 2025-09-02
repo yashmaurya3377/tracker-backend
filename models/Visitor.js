@@ -1,14 +1,14 @@
 import mongoose from "mongoose";
 
 const visitorSchema = new mongoose.Schema({
-  ip: String,
+  ip: { type: String, required: true },
   username: String,
   browser: String,
   os: String,
   screen: String,
   language: String,
-  deviceMemory: String,
-  cpuCores: String,
+  deviceMemory: Number,
+  cpuCores: Number,
   battery: String,
   lastVisit: { type: Date, default: Date.now },
 });
